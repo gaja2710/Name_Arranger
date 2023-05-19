@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <title>Name Arranger</title>
+</head>
+
+<body>
+    <center>
+        <style>
+            #button_submit {
+                margin: 20px;
+            }
+
+            input {
+                margin: 20px;
+            }
+
+            #button_arrange {
+                display: none;
+                margin: 20px;
+            }
+        </style>
+        <h1>Name Arranger</h1>
+        <h3>Enter anything below</h3>
+        <span>1</span>
+        <input id="s1" type="text" placeholder="Enter name">
+        <br>
+        <span>2</span>
+        <input id="s2" type="text" placeholder="Enter name">
+        <br>
+        <span>3</span>
+        <input id="s3" type="text" placeholder="Enter name">
+        <br>
+        <span>4</span>
+        <input id="s4" type="text" placeholder="Enter name">
+        <br>
+        <span>5</span>
+        <input id="s5" type="text" placeholder="Enter name">
+        <br>
+        <button id="button_submit" onclick="submit()">Submit</button>
+        <br>
+        <button id="button_arrange" onclick="sorting()">Sort</button>
+        <div id="display_names_1"></div>
+        <script>
+            array = [];
+            function submit() {
+                var n1 = document.getElementById("s1").value;
+                var n2 = document.getElementById("s2").value;
+                var n3 = document.getElementById("s3").value;
+                var n4 = document.getElementById("s4").value;
+                var n5 = document.getElementById("s5").value;
+
+                array.push(n1);
+                array.push(n2);
+                array.push(n3);
+                array.push(n4);
+                array.push(n5);
+                console.log(array);
+                document.getElementById("display_names_1").innerHTML = array;
+
+                document.getElementById("button_submit").style.display = "none";
+
+                document.getElementById("button_arrange").style.display = "inline-block";
+            }
+            function sorting() {
+                array.sort();
+                document.getElementById("display_names_1").innerHTML = array;
+            }
+        </script>
+    </center>
+</body>
+
+</html>
